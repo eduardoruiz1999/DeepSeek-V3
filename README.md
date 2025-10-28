@@ -302,6 +302,24 @@ Or batch inference on a given file:
 torchrun --nnodes 2 --nproc-per-node 8 --node-rank $RANK --master-addr $ADDR generate.py --ckpt-path /path/to/DeepSeek-V3-Demo --config configs/config_671B.json --input-file $FILE
 ```
 
+### 6.1.1 Interactive Terminal (easy way)
+
+For a quick and user-friendly way to chat with the model, you can use the `terminal.py` script. This script simplifies the process of launching an interactive session.
+
+1.  **Navigate to the `inference` directory:**
+    ```shell
+    cd DeepSeek-V3/inference
+    ```
+
+2.  **Ensure you have the converted model weights.** If you haven't converted them yet, the script will guide you.
+
+3.  **Run the terminal script:**
+    ```shell
+    python terminal.py
+    ```
+
+This will start the interactive terminal, and you can begin chatting with the model.
+
 ### 6.2 Inference with SGLang (recommended)
 
 [SGLang](https://github.com/sgl-project/sglang) currently supports [MLA optimizations](https://lmsys.org/blog/2024-09-04-sglang-v0-3/#deepseek-multi-head-latent-attention-mla-throughput-optimizations), [DP Attention](https://lmsys.org/blog/2024-12-04-sglang-v0-4/#data-parallelism-attention-for-deepseek-models), FP8 (W8A8), FP8 KV Cache, and Torch Compile, delivering state-of-the-art latency and throughput performance among open-source frameworks.
